@@ -3,3 +3,97 @@
 
 *, *::before, *::after {box-sizing: inherit;}
 html {box-sizing: border-box;}
+
+:root {
+  --cl-light-cyan: hsl(193, 38%, 86%);
+  --cl-neon-green: hsl(150, 100%, 66%);
+  --cl-grayish-blue: hsl(217, 19%, 38%);
+  --cl-dark-grayish-blue: hsl(217, 19%, 24%);
+  --cl-dark-blue: hsl(218, 23%, 16%);
+
+  --fs-default: 28px;
+
+  font: 800 var(--fs-default) "Manrope";
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background-color: var(--cl-dark-blue);
+  height: inherit;
+}
+
+main {
+  display: flex;
+  height: inherit;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  max-width: 540px;
+  position: relative;
+  background-color: var(--cl-dark-grayish-blue);
+  text-align: center;
+  margin: 5%;
+  border-radius: .7rem;
+  padding: 1rem;
+}
+
+.advice_title {
+  color: var(--cl-neon-green);
+  text-transform: uppercase;
+  font-size: .5rem;
+  letter-spacing: .1rem;
+  margin: 1rem 0;
+}
+
+.advice {
+  color: var(--cl-light-cyan);
+  line-height: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.get_advice {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 56px;
+  height: 56px;
+  display: inline-block;
+  background-color: var(--cl-neon-green);
+  padding: .5rem;
+  border-radius: 10rem;
+  transform: translate(-50%, 28px);
+  transition: box-shadow .5s;
+}
+
+.get_advice:hover {
+  cursor: pointer;
+  box-shadow: 0 0 1rem var(--cl-neon-green);
+  transition: box-shadow .5s;
+}
+
+.seperator {
+  margin: 1rem 0;
+}
+
+.desktop--visible, .mobile--visible {
+  width: 100%;
+}
+
+.desktop--visible {
+  display: none;
+}
+
+@media all and (min-width: 600px) {
+  .desktop--visible {
+    display: block;
+  }
+
+  .mobile--visible {
+    display: none;
+  }
+}
