@@ -9,7 +9,6 @@ fetch_advice();
 async function fetch_advice() {
   const adviceResponse = await fetch("https://api.adviceslip.com/advice", { cache: "no-cache" });
   const adviceJson = await adviceResponse.json();
-  console.log(adviceJson);
   adviceId.innerHTML = adviceJson.slip.id;
   adviceText.innerHTML = `"${adviceJson.slip.advice}"`;
 }
